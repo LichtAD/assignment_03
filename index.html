@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 03 Rinterio</title>
+    <link rel="stylesheet" href="style.css">
     <!-- tailwind + daisy -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,31 +39,68 @@
 
 <body>
     <header class="container mx-auto px-6 lg:px-10">
-        <!-- navbar -->
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-                <div class="flex gap-2 items-center">
-                    <div
-                        class="bg-btn_lightgreen rotate-45 h-10 w-10 rounded-full flex flex-col justify-center items-center">
-                        <i class="fa-solid fa-arrow-up"></i>
+        <!-- navbar section -->
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+
+                    <div class="flex gap-2 items-center">
+                        <div
+                            class="bg-btn_lightgreen rotate-45 h-10 w-10 rounded-full flex flex-col justify-center items-center">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+                        <a class="text-3xl font-bold">Rinterio</a>
                     </div>
-                    <a class="text-3xl font-bold">Rinterio</a>
+
+                    <!-- dropdown -->
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li class="font-bold"><a>Home</a></li>
+                            <li class="text-gray-500"><a>Services</a></li>
+                            <li class="text-gray-500"><a>Portfolio</a></li>
+                            <li class="text-gray-500"><a>Blogs</a></li>
+                            <li class="text-gray-500"><a>Contact Us</a></li>
+                        </ul>
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 font-medium text-xl">
-                    <li class="font-bold"><a>Home</a></li>
-                    <li class="text-gray-500"><a>Services</a></li>
-                    <li class="text-gray-500"><a>Portfolio</a></li>
-                    <li class="text-gray-500"><a>Blogs</a></li>
-                    <li class="text-gray-500"><a>Contact Us</a></li>
-                </ul>
-            </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 font-medium text-xl">
+                        <li class="font-bold"><a>Home</a></li>
+                        <li class="text-gray-500"><a>Services</a></li>
+                        <li class="text-gray-500"><a>Portfolio</a></li>
+                        <li class="text-gray-500"><a>Blogs</a></li>
+                        <li class="text-gray-500"><a>Contact Us</a></li>
+                    </ul>
+                </div>
 
-            <div class="navbar-end lg:flex gap-5">
+                <div class="navbar-end lg:flex lg:gap-5">
 
-                <div class="dropdown">
+                    <div class="hidden lg:flex items-center justify-center gap-2 lg:gap-4">
+                        <div class="bg-white shadow-2xl shadow-black px-3 py-2 rounded-full"><i
+                                class="fa-solid fa-magnifying-glass"></i></div>
+                        <div class="bg-white shadow-2xl shadow-black px-3 py-2 rounded-full"><i
+                                class="fa-solid fa-cart-shopping"></i></div>
+                        <button class="hidden lg:flex items-center rounded-[32px] gap-2 px-3 py-2 bg-btn_lightgreen">
+                            <a class="text-base text-black font-bold">Book Consult</a>
+                            <div
+                                class="bg-black text-white rotate-45 h-10 w-10 rounded-full flex flex-col justify-center items-center">
+                                <i class="fa-solid fa-arrow-up"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- dropdown -->
+                    <!-- <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -78,24 +116,14 @@
                         <li class="text-gray-500"><a>Blogs</a></li>
                         <li class="text-gray-500"><a>Contact Us</a></li>
                     </ul>
+                </div> -->
+
                 </div>
 
-                <div class="lg:flex items-center justify-center gap-4 hidden">
-                    <div class="bg-nav_white px-3 py-2 rounded-full"><i class="fa-solid fa-magnifying-glass"></i></div>
-                    <div class="bg-nav_white px-3 py-2 rounded-full"><i class="fa-solid fa-cart-shopping"></i></div>
-                    <button class="flex items-center rounded-[32px] gap-2 px-3 py-2 bg-btn_lightgreen">
-                        <a class="text-base text-black font-bold">Book Consult</a>
-                        <div
-                            class="bg-black text-white rotate-45 h-10 w-10 rounded-full flex flex-col justify-center items-center">
-                            <i class="fa-solid fa-arrow-up"></i>
-                        </div>
-                    </button>
-                </div>
             </div>
+        </nav>
 
-        </div>
-
-        <!-- banner -->
+        <!-- banner section -->
         <div class="flex justify-center items-center flex-col space-y-4">
             <!-- image -->
             <div>
@@ -105,9 +133,13 @@
             </div>
             <!-- text -->
             <div class="flex justify-center items-center text-center flex-col space-y-6">
-                <h1 class="font-bold text-4xl lg:text-7xl lg:w-[80%] mx-auto">A barn house of this design has a striking appearance</h1>
-                <p class="lg:w-4/6 mx-auto">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents, and large windows that flood the space with natural light.</p>
-                <button class="w-full lg:w-auto flex justify-center items-center rounded-[32px] gap-2 px-3 py-2 bg-btn_lightgreen_light">
+                <h1 class="font-bold text-4xl lg:text-7xl lg:w-[80%] mx-auto">A barn house of this design has a striking
+                    appearance</h1>
+                <p class="lg:w-4/6 mx-auto">The barn house captivates with its blend of rustic charm and modern
+                    sophistication, featuring weathered wood, sleek metal accents, and large windows that flood the
+                    space with natural light.</p>
+                <button
+                    class="w-full lg:w-auto flex justify-center items-center rounded-[32px] gap-2 px-3 py-2 bg-btn_lightgreen_light">
                     <a class="text-base text-black font-bold">View Details</a>
                     <div
                         class="bg-btn_lightgreen text-black rotate-45 h-10 w-10 rounded-full flex flex-col justify-center items-center">
@@ -122,13 +154,14 @@
         <!-- about us section -->
         <div class="grid grid-cols-1 lg:grid-cols-2 bg-gray-100 rounded-xl p-6 lg:p-12 items-center gap-8">
             <!-- text -->
-            <div class="space-y-4 relative">
+            <div class="space-y-8 relative">
 
                 <figure class="absolute -top-14 -left-10 hidden lg:block">
                     <img src="./assets/Vector.png" alt="">
                 </figure>
 
-                <button class="w-auto mx-auto lg:mx-0 flex justify-center items-center text-center rounded-[32px] gap-0 px-2 py-0 bg-white">
+                <button
+                    class="w-auto mx-auto lg:mx-0 flex justify-center items-center text-center rounded-[32px] gap-0 px-2 py-0 bg-white shadow-2xl shadow-gray-500">
                     <div
                         class="bg-none text-black rotate-90 h-10 w-10 rounded-full flex flex-col justify-center items-center">
                         <i class="fa-solid fa-arrow-up"></i>
@@ -137,10 +170,10 @@
                 </button>
 
                 <h1 class="font-bold text-3xl text-center lg:text-left">We design thoughtful, liveable spaces</h1>
-                <p class="text-center lg:text-left">The barn house captivates with its blend of rustic charm and 
+                <p class="text-center lg:text-left">The barn house captivates with its blend of rustic charm and
                     modern sophistication, featuring weathered wood, sleek metal accents.</p>
                 <!-- card 1 -->
-                <div class="flex items-start lg:items-center bg-white p-6 rounded-xl gap-4">
+                <div class="flex items-start lg:items-center bg-white shadow-2xl shadow-gray-500 p-6 rounded-xl gap-4">
                     <figure>
                         <img src="./assets/commercial.png" alt="">
                     </figure>
@@ -151,7 +184,7 @@
                 </div>
 
                 <!-- card 2 -->
-                <div class="flex items-start lg:items-center bg-white p-6 rounded-xl gap-4">
+                <div class="flex items-start lg:items-center bg-white shadow-2xl shadow-gray-500 p-6 rounded-xl gap-4">
                     <figure>
                         <img src="./assets/residential.png" alt="">
                     </figure>
@@ -170,18 +203,20 @@
         </div>
 
         <!-- work process section -->
-        <div class="mt-12 bg-gray-100 rounded-xl p-6 lg:p-12 space-y-4">
+        <div class="mt-12 bg-gray-100 rounded-xl p-6 lg:p-12 space-y-4 mb-20">
             <!-- button -->
-            <button class="w-auto mx-auto flex justify-center items-center text-center rounded-[32px] gap-0 px-2 py-0 bg-white">
+            <button
+                class="w-auto mx-auto flex justify-center items-center text-center rounded-[32px] gap-0 px-2 py-0 bg-white shadow-2xl shadow-gray-500">
                 <div
                     class="bg-none text-black rotate-90 h-10 w-10 rounded-full flex flex-col justify-center items-center">
                     <i class="fa-solid fa-arrow-up"></i>
                 </div>
                 <a class="text-base text-gray-600 font-bold pr-3">How We Works</a>
             </button>
-            
+
             <h1 class="text-center font-bold text-3xl">Our Works Process</h1>
-            <p class="text-center lg:w-[50%] mx-auto">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents.</p>
+            <p class="text-center lg:w-[50%] mx-auto">The barn house captivates with its blend of rustic charm and
+                modern sophistication, featuring weathered wood, sleek metal accents.</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 <!-- card 1 -->
@@ -221,6 +256,38 @@
                 </div>
 
             </div>
+        </div>
+
+        <!-- discuss section -->
+        <div class="discuss_sec bg-center bg-no-repeat bg-cover rounded-xl p-12 space-y-4">
+            <button
+                class="w-auto mx-auto flex justify-center items-center text-center rounded-[32px] gap-0 px-2 py-0 bg-btn_lightgreen_light shadow-2xl shadow-gray-500">
+                <div
+                    class="bg-none text-black rotate-90 h-10 w-10 rounded-full flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <a class="text-base text-gray-600 font-bold pr-3">Let's Connect</a>
+            </button>
+
+            <h1 class="text-3xl font-bold text-center">Let's Discuss Next Project</h1>
+            <p class="lg:w-[60%] mx-auto text-center">The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered
+                wood, sleek metal accents.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div><input type="text" class="w-full rounded-2xl pl-6 h-12" placeholder="First Name*"></div>
+                <div><input type="text" class="w-full rounded-2xl pl-6 h-12" placeholder="Last Name*"></div>
+                <div><input type="text" class="w-full rounded-2xl pl-6 h-12" placeholder="Phone Number*"></div>
+                <div><input type="text" class="w-full rounded-2xl pl-6 h-12" placeholder="Email Number*"></div>
+            </div>
+            <div><textarea rows="10" name="" placeholder="Write your message here" id="" class="w-full rounded-2xl border-none outline-none p-2"></textarea></div>
+
+            <button class="rounded-[32px] gap-2 px-1 py-2 w-full lg:flex flex justify-center items-center bg-btn_lightgreen">
+                <a class="text-base text-black font-bold">Send Mail</a>
+                <div
+                    class="bg-black text-white rotate-45 h-10 w-10 rounded-full flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+            </button>
+
         </div>
     </main>
 
